@@ -1,0 +1,8 @@
+services:
+
+    twig.IntraFormsExtension:
+        class: Service\Extensions\SF2FormsExtension
+        calls:
+           - [setService,["@service_container"]]
+        tags:
+            - { name: twig.extension }

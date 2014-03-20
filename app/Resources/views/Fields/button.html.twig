@@ -1,0 +1,26 @@
+{#
+type: button/submit/link
+name = Name of the Field
+value = Value of the Field
+class = CSS Classes
+nodiv = no DIV wrap
+label = Label before the input
+disable = disable the field
+target = frametarget
+#}
+
+{% if type is not defined %}
+    {% set type = 'submit' %}
+{% endif %}
+
+{% if type == 'button' %}
+    <button class="btn{% if class is not defined %} btn-primary{% else %} {{ class }}{% endif %}">{% if name is not defined %}Absenden{% else %}{{ name }}{% endif %}</button>
+{% endif %}
+
+{% if type == 'submit' %}
+    <input class="btn{% if class is not defined %} btn-primary{% else %} {{ class }}{% endif %}" type="submit" value="{% if name is not defined %}Absenden{% else %}{{ name }}{% endif %}">
+{% endif %}
+
+{% if type == 'link' %}
+    <a href="{% if value is not defined %}#{% else %}{{ value }}{% endif %}" {% if target is defined %}target="{{ target }}"{% endif %} class="btn{% if class is not defined %} btn-primary{% else %} {{ class }}{% endif %}">{% if name is not defined %}Absenden{% else %}{{ name }}{% endif %}</a>
+{% endif %}

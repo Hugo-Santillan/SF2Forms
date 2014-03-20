@@ -1,0 +1,24 @@
+{#
+Textfield markup for all Textfields
+{% include 'text.html.twig' with {'name': 'fieldname'} %}
+
+Params:
+name = Name of the Field
+value = Value of the Field
+class = CSS Classes
+fieldid = ID of the field
+#}
+
+{# different lines #}
+<div class="radio">
+    <label>
+        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+        Option one is this and that&mdash;be sure to include why it's great
+    </label>
+</div>
+
+
+{# on the same line #}
+<label class="radio-inline">
+    <input type="radio" id="inlineradio1" value="option1"> 1
+</label>

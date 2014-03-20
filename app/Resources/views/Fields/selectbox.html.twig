@@ -1,0 +1,23 @@
+{#
+Textfield markup for all Textfields
+{% include 'text.html.twig' with {'name': 'fieldname'} %}
+
+Params:
+name = Name of the Field
+value = Value of the Field
+class = CSS Classes
+fieldid = ID of the field
+#}
+{% if fieldid is not defined %}
+    {% set fieldid = name %}
+{% endif %}
+
+{% if nodiv is not defined %}<div class="{{ global.ui_input }}{% if divclass is defined %} {{ divclass }}{% endif %}">{% endif %}
+{% if label is defined %}   <label for="{{ fieldid }}">{{ label }}</label>{% endif %}
+<select name="{{ name }}" id="{{ fieldid }}" class="{{ global.input }}{% if class is defined %} {{ class }}{% endif %}">
+{% for pairKey,pairVal in array %}
+    <option value="{{ pairKey }}"{% if value is defined %}{% if value == pairKey %} selected{% endif %}{% endif %}>{{ pairVal }}</option>
+{% endfor %}
+</select>
+{% if help is defined %}   <span class="help-block">{{ help }}</span>{% endif %}
+{% if nodiv is not defined %}</div>{% endif %}

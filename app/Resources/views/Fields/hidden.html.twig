@@ -1,0 +1,12 @@
+{#
+Textfield markup for all Textfields
+{% include 'text.html.twig' with {'name': 'fieldname'} %}
+
+Params:
+name = Name of the Field
+value = Value of the Field
+class = CSS Classes
+fieldid = ID of the field
+#}
+
+<input name="{{ name }}" {% if value is defined %}value="{{ value }}"{% endif %} id="{% if fieldid is defined %}{{ fieldid }}{% else %}{{ name }}{% endif %}" type="hidden" />

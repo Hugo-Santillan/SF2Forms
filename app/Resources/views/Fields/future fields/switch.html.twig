@@ -1,0 +1,23 @@
+{#
+Textfield markup for all Textfields
+{% include 'text.html.twig' with {'name': 'fieldname'} %}
+
+Params:
+name = Name of the Field
+value = Value of the Field
+class = CSS Classes
+fieldid = ID of the field
+#}
+
+
+<div class="toggle">
+    <em class="icon-circle icon-fixed-width"></em>
+    <label class="toggle-on">
+        YES
+        <input type="radio" value="" name="toggle">
+    </label>
+    <label class="toggle-off">
+        NO
+        <input type="radio" value="" name="toggle">
+    </label>
+</div>

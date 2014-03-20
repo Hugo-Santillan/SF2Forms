@@ -1,0 +1,4 @@
+{#
+    form-inline
+#}
+<form method="{% if method is defined %}{{ method }}{% else %}post{% endif %}" action="{% if action is defined %}{{ action }}{% else %}/{% endif %}" {% if encoding is defined %}enctype="{{ encoding }}"{% endif %} name="{% if name is defined %}{{ name }}{% else %}formdata{% endif %}" class="form{% if class is defined %} {{ class }}{% endif %}" id="{% if id is defined %}{{ id }}{% elseif name is defined %}{{ name }}{% else %}formdata{% endif %}">
